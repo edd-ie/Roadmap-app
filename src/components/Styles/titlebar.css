@@ -1,0 +1,10 @@
+#tBar{
+    background: white;
+    width: 100vw;
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#logout{
+}

@@ -1,0 +1,114 @@
+#auth{
+    background: white;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.authDraw{
+    background: black;
+    width: 350px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.loginForm{
+    position: relative;
+    width: 90%;
+    height: 50%;
+}
+
+.loginForm input[type=email], input[type=password],
+select {
+    width: 95%;
+    padding: 10px 15px;
+    margin: 5px 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style the submit button */
+.loginForm input[type=submit] {
+    width: 70%;
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 15px;
+    margin: 8px 48px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+.loginForm input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.logOther{
+    width: 90%;
+    height: 65px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+}
+
+.otherOpt{
+    width: 300px;
+    height: 25px;
+    color: black;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.opts{
+    height: 24px;
+    width: 24px;
+    border-radius: 2px;
+    background-color: rgb(247, 242, 242);
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.opts:hover{
+    background-color: black;
+    border: 0.5px solid white;
+}
+
+#goog{
+    background-image: url('../../assets/logos/google.png');
+}
+
+.logOther p{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+.logOther p span{
+    color: rgb(123, 210, 245);
+    cursor: pointer;
+}
+
+.logOther p span:hover{
+    text-decoration: underline;
+}
