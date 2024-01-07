@@ -4,7 +4,11 @@ import {createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPo
 import './Styles/auth.css'
 
 export default function Auth({setLogged, setUser}) {
-    const [side, setSide] = useState("LOGIN")
+    const [side, setSide] = useState(true)
+
+    function switchSide(){
+        setSide(!side)
+    }
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -14,13 +18,14 @@ export default function Auth({setLogged, setUser}) {
         let password = form[1].value;
         
         try{
-            await signInWithEmailAndPassword(auth, email, password)
-            // await createUserWithEmailAndPassword(auth, email, password)
+            side ? await signInWithEmailAndPassword(auth, email, password) :
+            await createUserWithEmailAndPassword(auth, email, password);
             
             setUser(auth.currentUser.uid)
             setLogged(true)
         }
         catch(error){
+            alert("Invalid credentials!")
             console.error(error)
         }
         
@@ -40,7 +45,7 @@ export default function Auth({setLogged, setUser}) {
     return(
         <div id="auth">
             <div className="authDraw">
-                <h4>{side}</h4>
+                <h4>{side?"LOGIN":"SIGN UP"}</h4>
                 <form action="submit" className="loginForm" onSubmit={handleSubmit}>
                     <input type="email" placeholder="person@mail.com" required className="log"/>
                     <input type="password" placeholder="Password" className="log" />
@@ -52,7 +57,10 @@ export default function Auth({setLogged, setUser}) {
                     <div className="otherOpt">
                         <div className="opts" id="goog"  onClick={googleSign}></div>
                     </div>
-                    <p>Don't have an account... <span>Sign Up</span></p>
+                    {
+                        side ? <p>Don't have an account... <span onClick={switchSide}>Sign Up</span></p>:
+                        <p>Already have an account... <span onClick={switchSide}>Login</span></p>
+                    }
                 </div>
             </div>
         </div>

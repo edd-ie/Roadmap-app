@@ -1,9 +1,15 @@
 #tBar{
-    background: white;
-    width: 100vw;
-    height: 30px;
+    position: absolute;
+    background: transparent;
+    width: 80vw;
+    height: 40px;
     display: flex;
     align-items: center;
+    margin: 0;
+    border: 1px solid white;
+    top: 0%;
+    left: 19.5vw;
+    padding: 0;
 }
 
 #logout{
