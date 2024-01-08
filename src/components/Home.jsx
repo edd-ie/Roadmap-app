@@ -32,20 +32,10 @@ export default function Home({user, setLogged}) {
         getCourses()
     },[])
 
-    function logOut(){
-        try{
-        signOut(auth)
-        setLogged(false)
-        }
-        catch(error){
-        console.error(error)
-        }
-    }
-
     return(
         <div id="home">
             <TitleBar page={display} setLogged={setLogged}/>
-            <Menu setDisplay={setDisplay}/>
+            <Menu setDisplay={setDisplay} setLogged={setLogged}/>
         </div>
     )
 }
